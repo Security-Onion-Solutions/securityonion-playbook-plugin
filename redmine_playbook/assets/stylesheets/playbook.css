@@ -1,0 +1,24 @@
+div.issue {
+    background: #fafafa;
+}
+div.flash.notice, #flash_notice {
+    background: #76a8fe;
+}
+div.issue div.subject h3 {
+    visibility: hidden;
+}
+div.issue.child div.subject h3 {
+    display: none;
+}
+#sigma_form textarea {
+    height: 400px;
+}
+#sigma_form .contextual {
+    margin-top: auto;
+    clear: right;
+}
+#sigman_editor {
+    border: 1px solid #e0e2e3;
+    height: 400px;
+    margin: 0;
+}

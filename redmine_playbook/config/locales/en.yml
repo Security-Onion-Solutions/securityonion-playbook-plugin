@@ -1,0 +1,125 @@
+en:
+  activerecord:
+    errors:
+      messages:
+        cant_link_an_issue_with_a_descendant: "A task cannot be linked to one of its subtasks"
+        earlier_than_minimum_start_date: "cannot be earlier than %{date} because of preceding plays"
+        open_issue_with_closed_parent: "An open task cannot be attached to a closed parent task"
+  notice_failed_to_save_issues: "Failed to save %{count} play(s) on %{total} selected: %{ids}."
+  notice_no_issue_selected: "No play is selected! Please, check the plays you want to edit."
+  notice_issue_done_ratios_updated: Play done ratios updated.
+  notice_issue_successful_create: "Play %{id} created."
+  notice_issue_update_conflict: "The play has been updated by an other user while you were editing it."
+  error_issue_not_found_in_project: 'The play was not found or does not belong to this project'
+  error_no_default_issue_status: 'No default play status is defined. Please check your configuration (Go to "Administration -> Play statuses").'
+  error_can_not_delete_tracker: "This tracker contains plays and cannot be deleted."
+  error_can_not_reopen_issue_on_closed_version: 'A play assigned to a closed version cannot be reopened'
+  error_issue_done_ratios_not_updated: "Play done ratios not updated."
+  error_unable_delete_issue_status: 'Unable to delete play status'
+  error_no_tracker_allowed_for_new_issue_in_project: "The project doesn't have any trackers for which you can create a play"
+  error_no_projects_with_tracker_allowed_for_new_issue: "There are no projects with trackers for which you can create a play"
+  error_cannot_reassign_time_entries_to_an_issue_about_to_be_deleted: "Spent time cannot be reassigned to a play that is about to be deleted"
+  mail_subject_reminder: "%{count} play(s) due in the next %{days} days"
+  mail_body_reminder: "%{count} play(s) that are assigned to you are due in the next %{days} days:"
+  field_issue: Play
+  field_is_closed: Play closed
+  field_is_in_roadmap: Plays displayed in roadmap
+  field_issue_to: Related play
+  field_assignable: Plays can be assigned to this role
+  field_issues_visibility: Plays visibility
+  setting_issues_export_limit: Plays export limit
+  setting_cross_project_issue_relations: Allow cross-project play relations
+  setting_issue_list_default_columns: Default columns displayed on the playbook
+  setting_display_subprojects_issues: Display subprojects plays on main projects by default
+  setting_issue_done_ratio: Calculate the play done ratio with
+  setting_issue_done_ratio_issue_field: Use the play field
+  setting_issue_done_ratio_issue_status: Use the play status
+  setting_issue_group_assignment: Allow play assignment to groups
+  setting_default_issue_start_date_to_creation_date: Use current date as start date for new plays / tasks
+  setting_commit_cross_project_ref: Allow plays of all the other projects to be referenced and fixed
+  setting_link_copied_issue: Link plays on copy
+  permission_manage_categories: Manage play categories
+  permission_view_issues: View plays
+  permission_add_issues: Add plays
+  permission_edit_issues: Edit plays
+  permission_copy_issues: Copy plays
+  permission_manage_issue_relations: Manage play relations
+  permission_set_issues_private: Set plays public or private
+  permission_set_own_issues_private: Set own plays public or private
+  permission_move_issues: Move plays
+  permission_delete_issues: Delete plays
+  permission_manage_related_issues: Manage related plays
+  permission_import_issues: Import plays
+  project_module_issue_tracking: Issue tracking
+  label_issue: Play
+  label_issue_new: New play / task
+  label_issue_plural: Playbook
+  label_issue_view_all: View all plays
+  label_issues_by: "Plays by %{value}"
+  label_issue_added: Play added
+  label_issue_updated: Play updated
+  label_issue_status: Play status
+  label_issue_status_plural: Play statuses
+  label_issue_category: Play category
+  label_issue_category_plural: Play categories
+  label_reported_issues: Reported plays
+  label_assigned_issues: Assigned plays
+  label_assigned_to_me_issues: Plays assigned to me
+  label_x_issues:
+    zero:  0 plays
+    one:   1 play
+    other: "%{count} plays"
+  label_any_issues_in_project: any plays in project
+  label_any_issues_not_in_project: any plays not in project
+  label_no_issues_in_project: no plays in project
+  label_any_open_issues: any open plays
+  label_no_open_issues: no open plays
+  label_roadmap_no_issues: No plays for this version
+  label_issue_tracking: Issue tracking
+  label_watched_issues: Watched plays
+  label_related_issues: Related plays
+  label_bulk_edit_selected_issues: Bulk edit selected plays
+  label_update_issue_done_ratios: Update play done ratios
+  label_issues_visibility_all: All plays
+  label_issues_visibility_public: All non private plays
+  label_issues_visibility_own: Plays created by or assigned to the user
+  label_attribute_of_issue: "Play's %{name}"
+  label_link_copied_issue: Link copied plays
+  label_search_open_issues_only: Open plays only
+  label_import_issues: Import plays
+  label_new_project_issue_tab_enabled: Display the "New play / task" tab
+  text_tip_issue_begin_day: play beginning this day
+  text_tip_issue_end_day: play ending this day
+  text_tip_issue_begin_end_day: play beginning and ending this day
+  text_issues_ref_in_commit_messages: Referencing and fixing plays in commit messages
+  text_issue_added: "Play %{id} has been reported by %{author}."
+  text_issue_updated: "Play %{id} has been updated by %{author}."
+  text_issue_category_destroy_question: "Some plays (%{count}) are assigned to this category. What do you want to do?"
+  text_issue_category_reassign_to: Reassign plays to this category
+  text_user_mail_option: "For unselected projects, you will only receive notifications about things you watch or you're involved in (eg. plays you're the author or assignee)."
+  text_no_configuration_data: "Roles, trackers, play statuses and workflow have not been configured yet.\nIt is highly recommended to load the default configuration. You will be able to modify it once loaded."
+  text_issues_destroy_confirmation: 'Are you sure you want to delete the selected play(s)?'
+  text_destroy_time_entries_question: "%{hours} hours were reported on the plays you are about to delete. What do you want to do?"
+  text_reassign_time_entries: 'Reassign reported hours to this play:'
+  enumeration_issue_priorities: Play priorities
+  description_issue_category_reassign: Choose play category
+
+  label_main_project: Main project
+  label_import_trackers: Import trackers
+  label_sigma_editor: Sigma Editor
+  label_sigma: Sigma
+  label_elasticsearch: SO Elasticsearch Query
+  label_sigma_convert_url: Sigma convert URL
+  label_play_create_url: Play create URL
+  label_sigma_spec: Sigma Spec
+  label_so_log_sources: SO Log Sources
+  label_load_example_sigma: Load Example Sigma
+  project_module_sigma_editor: Sigma editor
+  permission_sigma_editor: Use sigma editor
+  button_convert: Convert
+  button_create_play_from_sigma: Create Play from Sigma
+  notice_wait_while_redirect: Please wait while you are redirected...
+  error_connection_failed: Connection failed
+  error_creation_failed: Creation failed
+  error_creation_failed_with_status: Play creation failed with status code %{status}
+  error_conversion_failed: Conversion failed
