@@ -1,0 +1,6 @@
+<% if @error.present? %>
+  $('#errorExplanation').html('<%= raw(escape_javascript(@error)) %>').show();
+<% else %>
+  $('#errorExplanation').hide();
+  window.location.href = '<%= raw(escape_javascript(@redirect_url)) %>';
+<% end %>

@@ -1,0 +1,54 @@
+<h2><%= l(:label_sigma_editor) %></h2>
+
+<p id="errorExplanation" style="<%= 'display: none;' unless @error.present? %>"><%= @error %></p>
+
+<p>
+  <%= link_to(l(:label_sigma_spec), 'https://github.com/Neo23x0/sigma/wiki/Specification', :target => :_blank) %> |
+  <%= link_to(l(:label_so_log_sources), 'https://github.com/Security-Onion-Solutions/securityonion-saltstack/wiki/Playbook#log-sources', :target => :_blank) %> |
+  <%= link_to(l(:label_load_example_sigma), { :action => 'example' }, :remote => true) %>
+</p>
+
+<%= form_tag({ :action => 'convert' }, :id => 'sigma_form', :method => :put, :remote => true, :onsubmit => "$('#output').val(''); if (window.aceEditor) { $('#input').val(window.aceEditor.session.getValue()); }") do %>
+  <div class="splitcontent">
+    <div class="splitcontentleft">
+      <fieldset class="box">
+        <legend><%= l(:label_sigma) %></legend>
+        <pre id="sigman_editor" style="display: none;"></pre>
+        <%= text_area_tag('input', params[:input], :cols => 100, :rows => 25, :class => 'wiki-edit ace_editor', :accesskey => accesskey(:edit)) %>
+
+        <%= javascript_tag do %>
+          var $input = $('#input').hide();
+          var $container = $('#sigman_editor').show();
+          window.aceEditor = ace.edit($container[0]);
+          window.aceEditor.setTheme("ace/theme/dawn");
+          window.aceEditor.session.setMode("ace/mode/yaml");
+          window.aceEditor.session.setValue($input.val());
+          window.aceEditor.session.setUseWrapMode(true);
+          window.aceEditor.setShowPrintMargin(false);
+        <% end %>
+      </fieldset>
+    </div>
+
+    <div class="splitcontentright">
+      <fieldset class="box">
+        <legend><%= l(:label_elasticsearch) %></legend>
+        <%= text_area_tag('output', @output, :cols => 100, :rows => 25, :readonly => true, :class => 'wiki-edit ace_editor') %>
+      </fieldset>
+    </div>
+  </div>
+
+  <div class="contextual">
+    <%= link_to_function(l(:button_copy), "$('#output').select(); document.execCommand('copy'); document.getSelection().removeAllRanges();", :class => 'icon icon-copy') %>
+  </div>
+
+  <p style="clear: left;">
+    <%= submit_tag(l(:button_convert), :onclick => "this.form.action = '#{url_for(:action => 'convert')}';") %>
+    <%= submit_tag(l(:button_create_play_from_sigma), :onclick => "this.form.action = '#{url_for(:action => 'create')}';") if Setting.plugin_redmine_playbook['create_url'].present? %>
+  </p>
+<% end %>
+
+<% content_for :header_tags do %>
+  <%= javascript_include_tag('ace', :plugin => 'redmine_playbook') %>
+<% end %>
+
+<% html_title(l(:label_sigma_editor)) -%>

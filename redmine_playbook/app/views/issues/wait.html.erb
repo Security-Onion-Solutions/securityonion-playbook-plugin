@@ -1,0 +1,9 @@
+<p class="warning"><%= l(:notice_wait_while_redirect) %></p>
+
+<%= javascript_tag do %>
+  setTimeout(function() {
+    location.href = '<%= escape_javascript(@url) %>';
+  }, 2000);
+<% end %>
+
+<% html_title("#{@issue.tracker.name} ##{@issue.id}: #{@issue.subject}") %>

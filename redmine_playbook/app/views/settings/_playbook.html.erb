@@ -1,0 +1,22 @@
+<% main_project = @settings['project'] ? Project.find_by_id(@settings['project']) : nil %>
+<p>
+  <%= label_tag('settings[project]', l(:label_main_project)) %>
+  <%= select_tag('settings[project]', project_tree_options_for_select(Project.active.all.to_a, :include_blank => true, :selected => main_project)) %>
+</p>
+<p>
+  <%= label_tag('settings[import_trackers]', l(:label_import_trackers)) %>
+  <% Tracker.sorted.each do |tracker| %>
+    <label class="block">
+      <%= check_box_tag('settings[import_trackers][]', tracker.id, @settings['import_trackers'].is_a?(Array) && @settings['import_trackers'].include?(tracker.id.to_s)) %>
+      <%= tracker.name %>
+    </label>
+  <% end %>
+</p>
+<p>
+  <%= label_tag('settings[convert_url]', l(:label_sigma_convert_url)) %>
+  <%= text_field_tag('settings[convert_url]', @settings['convert_url'], :size => 60) %>
+</p>
+<p>
+  <%= label_tag('settings[create_url]', l(:label_play_create_url)) %>
+  <%= text_field_tag('settings[create_url]', @settings['create_url'], :size => 60) %>
+</p>
