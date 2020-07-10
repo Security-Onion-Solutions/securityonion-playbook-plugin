@@ -1,0 +1,3 @@
+$('#errorExplanation').hide();
+$('#input').val('<%= raw(escape_javascript(params[:input])) %>');
+window.aceEditor.session.setValue($('#input').val());
