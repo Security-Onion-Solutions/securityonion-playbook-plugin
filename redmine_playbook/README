@@ -1,9 +1,0 @@
-To enable the Sigma Editor you need to:
-
- o Specify a "Sigma convert URL" in the plugin's settings.
- o Assign "Use sigma editor" permission to all roles including "Non member".
- o Enable "Sigma editor" module in project settings.
-
-To enable "Create Play from Sigma" button you need to:
-
- o Specify a "Play create URL" in the plugin's settings.
