@@ -29,6 +29,16 @@ class SigmaEditorController < ApplicationController
             format.js
         end
     end
+    
+    def example3
+        example3 = File.join(Redmine::Plugin.find(:redmine_playbook).directory, 'config/example3.yaml')
+        return render_404 unless File.exists?(example2)
+        params[:input] = File.read(example2)
+        respond_to do |format|
+            format.html { render :action => 'edit' }
+            format.js
+        end
+    end
 
     def convert
         return render_403 if Setting.plugin_redmine_playbook['convert_url'].blank?
