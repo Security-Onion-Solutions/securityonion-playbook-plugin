@@ -113,8 +113,9 @@ en:
   label_play_create_url: Play create URL
   label_sigma_spec: Sigma Spec
   label_so_log_sources: SO Log Sources
-  label_load_example_sigma_1: Load Example - Osquery
-  label_load_example_sigma_2: Load Example - Sysmon
+  label_load_example_sigma_1: Windows Eventlog
+  label_load_example_sigma_2: Sysmon
+  label_load_example_sigma_3: Osquery
   project_module_sigma_editor: Sigma editor
   permission_sigma_editor: Use sigma editor
   button_convert: Convert
