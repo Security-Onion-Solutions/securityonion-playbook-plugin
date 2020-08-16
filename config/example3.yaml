@@ -1,16 +1,29 @@
-title: Windows Security Event Log Cleared
+title: New Sensitive Shared Resource
+description: Network shares with loose access controls are common places that leak sensitive information. This play proactively looks for newly shared resources that likely contain sensitive data. Follow-up will be needed to confirm that appropriate access control is in place.
 status: experimental
-description: Detects when the Windows Security eventlog has been cleared by looking for event id 1102.
 author: Josh Brower
+tags:
+    - attack.discovery
+    - attack.t1135
 logsource:
-    product: windows
-    service: security
+    product: osquery
+    definition: 'select Description,Name,Path, "601" AS qid  from shared_resources where type = 0 AND name <> "print$";'
+    qid: 601
 detection:
     selection:
-        EventID: 1102
-    condition: selection
-falsepositives:
-    - None
-fields:
-    - SubjectUsername
-level: high
+        qid: 601
+        column_name:
+          - '*hr*'
+          - '*finance*'
+          - '*backup*'
+          - '*www*'
+          - '*scan*'
+    filter:
+      counter: 0
+    condition: selection and not filter
+falsepositives: 
+    - unknown
+level: medium
+tasks:
+    1 - Check Share Permissions: Are share permissions set to an appropriate level? They should be tied to the relevant AD Security Group.
+    2 - Contact System/Service Owner: If share permissions are not appropriate, contact the system/service owner for remediation.
