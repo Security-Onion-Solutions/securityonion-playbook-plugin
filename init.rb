@@ -33,7 +33,7 @@ Redmine::Plugin.register :redmine_playbook do
     version '0.1.2'
 
     project_module :sigma_editor do
-        permission :sigma_editor, { :sigma_editor => [ :edit, :example, :example2, :convert, :create ] }
+        permission :sigma_editor, { :sigma_editor => [ :edit, :example, :example2, :example3, :convert, :create ] }
     end
 
     Redmine::MenuManager.map :top_menu do |menu|
