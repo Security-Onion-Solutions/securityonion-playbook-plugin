@@ -111,7 +111,7 @@ en:
   label_elasticsearch: SO Elasticsearch Query
   label_sigma_convert_url: Sigma convert URL
   label_play_create_url: Play create URL
-  label_sigma_spec: Sigma Spec
+  label_sigma_spec: Documentation
   label_so_log_sources: SO Log Sources
   label_load_example_sigma_1: Windows Eventlog
   label_load_example_sigma_2: Sysmon
