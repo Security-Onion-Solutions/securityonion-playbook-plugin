@@ -106,7 +106,7 @@ en:
 
   label_main_project: Main project
   label_import_trackers: Import trackers
-  label_sigma_editor: Sigma Editor
+  label_sigma_editor: Create New Play
   label_sigma: Sigma
   label_elasticsearch: SO Elasticsearch Query
   label_sigma_convert_url: Sigma convert URL
